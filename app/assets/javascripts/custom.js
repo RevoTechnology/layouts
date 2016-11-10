@@ -4,11 +4,8 @@ $(document).ready(function() {
     var $window = $(window),
         $body = $('body');
 
-    $('.photo-landing').on('click', function() {
-        var target = $(this).data('class'),
-            target = '.' + target;
-
-        $(target).bPopup({
+    $('.link-register').on('click', function() {
+        $('.popup.profile').bPopup({
             closeClass: 'popup-close',
             opacity: 0.8,
             follow: false

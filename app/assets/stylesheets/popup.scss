@@ -1,0 +1,393 @@
+/********** popups common **********/
+.popup {
+    display: none;
+    width: 550px;
+    background: $white;
+    @include bradius(3px);
+
+    &.loading {
+        padding-bottom: 10px;
+    }
+}
+
+.popupTitle {
+    position: relative;
+    padding: 20px 25px 20px;
+    font-family: $bitter-regular;
+    font-size: 20px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.popupTitle__close {
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+    top: 15px;
+    right: 12px;
+    background: #fff;
+    cursor: pointer;
+    z-index: 1;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -7px;
+        margin-left: -7px;
+        @include background-image(cross_small_black, 14px, 14px);
+    }
+}
+
+
+// secure block
+.popupSecure {
+    margin: 25px 25px 23px;
+    padding: 14px 15px;
+    background: $white;
+    @include bradius(3px);
+    @include box-shadow(0px 0px 15px 0px rgba(0,0,0,0.10));
+}
+
+.popupSecure__info {
+    position: relative;
+    padding-left: 125px;
+    font-size: 12px;
+    line-height: 17px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -15px;
+        display: inline-block;
+        width: 89px;
+        height: 30px;
+        background: image-url('icons/secured.png') no-repeat center center;
+        @include bgsize(cover);
+    }
+}
+
+
+
+// footer popup
+.popupFooter {
+    position: relative;
+    padding: 25px 25px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #DEDEDE;
+    }
+}
+
+.popupFooter--special {
+    padding-top: 23px;
+    padding-bottom: 27px;
+
+    &:before {
+        left: 25px;
+        right: 25px;
+    }
+}
+
+.popupFooter__info {
+    padding-left: 195px;
+    font-size: 14px;
+    line-height: 18px;
+    color: $gray-deep;
+}
+
+.popupFooter__logo {
+    float: left;
+    margin-top: 2px;
+    margin-left: 30px;
+    @include background-image(logo_header, 101px, 18px);
+}
+
+
+
+/********** popups with form **********/
+.popup__form,
+.popup_form {
+    padding: 0 25px;
+}
+
+
+
+/********** info popups **********/
+.popupInfo {
+    padding: 0 20px 28px;
+    text-align: center;
+}
+
+.popupIconWrapper {
+    padding: 38px 20px 11px;
+}
+
+.popupIconWrapper__icon {
+
+}
+
+.popupIconWrapper__icon--loading {
+    @include background-image(loading, 80px, 80px);
+}
+
+.popupIconWrapper__icon--serverError {
+    @include background-image(server_error, 80px, 80px);
+}
+
+.popupIconWrapper__icon--paymentOk {
+    @include background-image(ok_popup, 80px, 80px);
+}
+
+.popupIconWrapper__icon--paymentRefuse {
+    @include background-image(popup_refuse, 80px, 80px);
+}
+
+.popupIconWrapper__icon--paymentRenewal {
+    @include background-image(popup_renewal, 80px, 80px);
+}
+
+
+
+.popupInfo__title {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.popupInfo__text {
+    margin: 0 auto;
+    max-width: 380px;
+    color: $gray-deep;
+
+    b {
+        font-family: $nova-bold;
+        color: $black;
+    }
+}
+
+
+
+/********** agreement popup **********/
+.popupAgreement {
+    padding: 15px 25px 10px;
+}
+
+
+
+// attention block
+.agreementAttention {
+    position: relative;
+    margin: 30px 0 13px;
+    padding: 33px 20px 31px;
+    text-align: center;
+    border: 3px solid $orange;
+}
+
+.agreementAttention__title {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    display: inline-block;
+    padding: 0 30px;
+    background-color: $white;
+    font: 14px/20px $nova-bold;
+    @include transform(translateX(-50%));
+    white-space: nowrap;
+}
+
+.agreementAttention__info {
+    font-size: 20px;
+}
+
+
+
+// conditions block
+.popupConditionsWrapper {
+
+}
+
+.popupConditionsList {
+    margin: 0 0 10px;
+    counter-reset: item;
+}
+
+.popupConditionsListItem {
+    position: relative;
+    padding: 20px 0 20px 35px;
+    border-bottom: 1px solid #D1D1D1;
+
+    &:last-child {
+        border: 0;
+    }
+
+    &:before {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        content:counters(item,".");
+        counter-increment:item;
+        font-size: 14px;
+        color: #9F9F9F;
+    }
+}
+
+.popupConditionsListItem__title {
+    float: left;
+    width: 50%;
+    padding-right: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.popupConditionsListItem__info {
+    float: left;
+    padding-left: 10px;
+    width: 50%;
+    font: 14px/20px $nova-bold;
+}
+
+
+
+// download link button
+.popupAgreement__download {
+    display: block;
+    margin: 0 0 8px;
+    height: 50px;
+    background: $white;
+    font: 16px/50px $nova-semibold;
+    color: $black;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #D1D1D1;
+    @include bradius(3px);
+
+    &:hover {
+        background: $white-light;
+    }
+
+    &:before {
+        content: '';
+        position: relative;
+        top: 7px;
+        margin-right: 15px;
+        @include background-image(link_pdf, 24px, 25px);
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    .popup {
+        width: auto;
+        min-width: 290px;
+        left: 15px;
+        right: 15px;
+    }
+
+    .popupTitle {
+        padding: 13px 15px;
+    }
+
+    .popupTitle__close {
+        top: 8px;
+    }
+
+    .popup__form {
+        padding: 0 15px;
+    }
+
+
+
+    .popupFooter {
+        padding: 15px;
+        text-align: center;
+
+        &:before {
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .popupFooter--special {
+        padding: 22px 15px 21px;
+    }
+
+    .popupFooter--special {
+        &:before {
+            left: 15px;
+            right: 15px;
+        }
+    }
+
+    .popupFooter__logo {
+        float: none;
+        margin: 0 0 4px;
+    }
+
+    .popupInfo {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .popupFooter__info {
+        padding: 0;
+    }
+
+
+
+    /********** agreement popup **********/
+    .popupAgreement {
+        padding: 0 15px 10px;
+    }
+
+    .agreementAttention {
+        padding: 26px 20px 24px;
+    }
+
+    .agreementAttention__title {
+        padding: 0 15px;
+    }
+
+    .agreementAttention__info {
+        line-height: 24px;
+    }
+
+
+
+    .popupConditionsListItem {
+        padding: 24px 0 21px 25px;
+
+        &:before {
+            top: 22px;
+            font-size: 16px;
+        }
+    }
+
+    .popupConditionsListItem__title {
+        float: none;
+        width: 100%;
+        margin-bottom: 18px;
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    .popupConditionsListItem__info {
+        float: none;
+        width: 100%;
+        padding: 0;
+        font-size: 16px;
+        line-height: 21px;
+    }
+}

@@ -1,0 +1,695 @@
+.ui-datepicker {
+    z-index: 10000!important;
+}
+
+/********** forms common **********/
+.form {
+
+}
+
+.form--imageLoad {
+    padding-top: 25px;
+}
+
+.formBlock {
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 18px;
+}
+
+.formBlock--2 {
+    width: 49%;
+    float: left;
+
+    &:nth-child(2n) {
+        float: right;
+    }
+}
+
+.formBlock--3 {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.formBlock--3_2 {
+    width: 66%;
+    float: left;
+    margin-right: 2%;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.formBlock--continue {
+    margin-top: 7px;
+    margin-bottom: 25px;
+    float: right;
+    width: 65%;
+}
+
+.formBlock--reset {
+    margin-top: 7px;
+    margin-bottom: 25px;
+    margin-right: 67%;
+}
+
+.formBlock--margin {
+    margin-bottom: 38px;
+}
+
+
+
+.formBlockTitle {
+    margin: 10px 0 15px;
+    font-size: 20px;
+}
+
+.formBlockTitle--small {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.formBlockTitle--topMargin {
+    margin-top: 25px;
+}
+
+
+
+.fieldContainer {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    background: $white;
+    border: 1px solid $gray;
+    cursor: pointer;
+    @include bradius(3px);
+    @include box-shadow(inset 0px 2px 3px 0px rgba(0,0,0,0.12));
+    @include transition(color .2s linear, border .1s linear, background-color .2s linear);
+
+    &:hover {
+        background-color: #FAFAFA;
+    }
+
+    &.is-focused {
+        border: 2px solid $orange-deep;
+        background-color: $white;
+    }
+
+    // &.is-disabled {
+    //     border: 1px solid $gray;
+    //     background-color: $gray-clear;
+    //     cursor: default;
+    //
+    //     & ~ .field_reset {
+    //         display: none;
+    //     }
+    //
+    //     .field_input {
+    //         cursor: default;
+    //     }
+    // }
+    //
+    // .is-error & {
+    //     border: 1px solid #e59797;
+    // }
+}
+
+.fieldContainer--radio {
+    padding: 0;
+    border: 0;
+    @include box-shadow(none);
+}
+
+.fieldContainer--checkbox {
+    padding: 9px 0 0 36px;
+    height: auto;
+    border: 0;
+    @include box-shadow(none);
+}
+
+.fieldContainer--image {
+    overflow: hidden;
+    height: 150px;
+    padding: 38px 20px 0;
+    text-align: center;
+    border: 1px solid #E1E1E1;
+    @include bradius(5px);
+    @include box-shadow(none);
+
+    &:hover {
+        .fieldContainer__addImage {
+            @include box-shadow(0px 0px 15px 0px #33A1CA);
+        }
+
+        .fieldContainer__label--image {
+            color: $black;
+        }
+
+        .linkButton--imageLoad {
+            background: #3DB2DE;
+        }
+    }
+
+    &.with-image {
+        border: 0;
+        .fieldContainer__addImage,
+        .fieldContainer__label {
+            @include hide();
+        }
+
+        .fieldContainer__imgBg {
+            @include show();
+        }
+
+        .linkButton {
+            @include show();
+            @include transition(opacity $transition-normal, visibility $transition-normal, background $transition-normal);
+        }
+    }
+}
+
+.fieldContainer--period {
+    margin: 0 0 10px;
+    padding: 0;
+    height: auto;
+    border: 0;
+    @include box-shadow(none);
+}
+
+
+
+.fieldContainer__label {
+    position: absolute;
+    z-index: 2;
+    left: 14px;
+    top: 16px;
+    display: inline-block;
+    font: 16px/16px $nova-regular;
+    color: #999999;
+    @include transition(top .1s ease-in-out, font-size .1s ease-in-out);
+
+    .is-focused &,
+    .is-filled & {
+        top: 6px;
+        font-size: 12px;
+    }
+}
+
+.fieldContainer__label--image {
+    position: static;
+    display: block;
+    padding-top: 5px;
+    left: auto;
+    top: auto;
+    color: #7E7E7E;
+    @include transition(color $transition-normal);
+}
+
+.fieldContainer__addImage {
+    @include bradius(50%);
+    @include background-image(add, 40px, 40px);
+    @include box-shadow(none);
+    @include transition(box-shadow $transition-normal);
+}
+
+.fieldContainer__field {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 12px 54px 0 15px;
+    font: 16px/24px $nova-regular;
+    color: $black;
+    background: transparent;
+    cursor: pointer;
+
+    @include opacity(0);
+    @include transition(top .1s ease-in-out, opacity .3s ease-in-out);
+
+    .is-focused &,
+    .is-filled & {
+        padding-top: 20px;
+        @include opacity(1);
+    }
+
+    //
+    // .field_info & {
+    //     position: static;
+    //     width: 100%;
+    //     line-height: 30px;
+    //     @include opacity(1);
+    // }
+
+    .fieldContainer--checkbox &,
+    .fieldContainer--image & {
+        display: none;
+    }
+}
+
+
+
+.radioLabel {
+    display: block;
+    float: left;
+    width: 50%;
+
+    &:first-child {
+        .radioLabel__button {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+    }
+
+    &:last-child {
+        .radioLabel__button {
+            border-right: 1px solid #CACACA;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+    }
+}
+
+.radioLabel__button {
+    display: block;
+    height: 50px;
+    background: $white;
+    border: 1px solid #CACACA;
+    border-right: 0;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    @include transition(color $transition-normal, background-color $transition-normal, border-color $transition-normal);
+
+    .radioLabel__field:checked + & {
+        border-color: $orange;
+        background-color: $orange;
+        color: $white;
+    }
+}
+
+.radioLabel__field {
+    display: none;
+}
+
+
+
+.fieldContainer__checkboxIcon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    background: $white;
+    border: 1px solid #CACACA;
+    @include bradius(3px);
+    @include box-shadow(inset 0px 1px 2px 0px rgba(0,0,0,0.22));
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 4px;
+        @include background-image(mark, 11px, 9px);
+        @include opacity(0);
+        @include transition(opacity $transition-normal);
+    }
+
+    .fieldContainer__field:checked + & {
+        &:before {
+            @include opacity(1);
+        }
+    }
+}
+
+.fieldContainer__checkboxInfo {
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-deep;
+
+    a {
+        color: $gray-deep;
+        border-bottom: 1px solid rgba(105,105,105, 0.5);
+
+        &:hover {
+            border-bottom-color: transparent;
+        }
+    }
+}
+
+
+
+.formBlock__info {
+    padding: 7px 10px;
+    font-size: 14px;
+    line-height: 18px;
+    color: $gray-deep;
+}
+
+.formBlock__remark {
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #999999;
+    @include transition(right $transition-normal);
+
+    .is-focused ~ &,
+    .is-filled ~ & {
+        right: 50px;
+    }
+}
+
+.formBlock__reset {
+    position: absolute;
+    z-index: 5;
+    right: 20px;
+    top: 18px;
+    cursor: pointer;
+    @include hide();
+    @include background-image(cross_small_red, 14px, 14px);
+
+    .form_request & {
+        right: 37px;
+    }
+}
+
+.is-focused ~ .formBlock__reset,
+.is-filled ~ .formBlock__reset {
+    @include show();
+}
+
+.formBlock__errorMessage {
+    float: none;
+    clear: both;
+    display: none;
+    margin-top: 3px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #d95656;
+
+    .is-error & {
+        display: block;
+    }
+}
+
+
+
+.form__hr {
+    margin: 7px -25px 18px;
+    border-top: 1px solid #DEDEDE;
+
+    .formBlock + & {
+        margin-top: 25px;
+    }
+}
+
+.fieldContainer__imgBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include hide();
+}
+
+
+
+// radio info block
+.fieldContainer__fieldPeriod {
+    display: none;
+}
+
+.labelRadioWrapper {
+    background: $white;
+    border: 1px solid #CACACA;
+    overflow: hidden;
+    @include bradius(3px);
+    @include transition(border-color $transition-normal);
+
+    .is-checked & {
+        border-color: transparent;
+    }
+}
+
+.labelRadio {
+    position: relative;
+    display: none;
+    padding: 13px 15px 13px;
+    background: #2A83A5;
+    @include transition(background-color $transition-normal);
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+        display: inline-block;
+        height: 1px;
+        background-color: rgba(255,255,255, 0.3)
+    }
+
+    &:last-child {
+        // padding-top: 14px;
+
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.labelRadio--header {
+    display: block;
+    background-color: $white;
+
+    &:hover {
+        background-color: $white-light;
+    }
+
+    &:after {
+        display: none;
+    }
+
+    .labelRadio__info,
+    .labelRadio__sum {
+        color: $black;
+    }
+
+    .labelRadio__info {
+        position: relative;
+        padding-left: 30px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -2px;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-top: -9px;
+            @include bradius(50%);
+            background-color: $gray-clear;
+            @include transition(background-color $transition-normal);
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 2px;
+            margin-top: -4px;
+            @include opacity(0);
+            @include background-image(mark_blue, 11px, 8px);
+            @include transition(opacity $transition-normal);
+            z-index: 2;
+        }
+    }
+
+    .is-checked & {
+        background-color: $blue;
+
+        &:hover {
+            background-color: $blue;
+        }
+
+        .labelRadio__info,
+        .labelRadio__sum {
+            color: $white;
+        }
+
+        .labelRadio__info {
+            &:after {
+                background-color: $white;
+            }
+
+            &:before {
+                @include opacity(1);
+            }
+        }
+    }
+}
+
+.labelRadio__info {
+    float: left;
+    display: inline-block;
+    font-size: 16px;
+    color: $white;
+    @include transition(color $transition-normal);
+}
+
+.labelRadio__sum {
+    float: right;
+    display: inline-block;
+    font-size: 16px;
+    color: $white;
+    @include transition(color $transition-normal);
+
+    b {
+        font-family: $nova-bold;
+    }
+}
+
+
+
+// sms send hidden block
+.formSendHidden {
+    display: none;
+    float: none;
+    clear: both;
+    margin: 20px 0 11px;
+    text-align: center;
+}
+
+.formSendHiddenInfo {
+    font-size: 16px;
+}
+
+.formSendHiddenInfo__time {
+    color: $orange-deep;
+}
+
+
+
+@media (max-width: 767px) {
+    .formBlockWrapper {
+
+    }
+
+    .formBlock {
+        margin-bottom: 15px;
+    }
+
+    .formBlock--margin {
+        margin-bottom: 35px;
+    }
+
+    .formBlock--2,
+    .formBlock--3,
+    .formBlock--3_2 {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+
+    .formBlock--3 {
+        .formBlockWrapper--address & {
+            width: 48%;
+            float: left;
+
+            &:nth-child(2n) {
+                float: right;
+            }
+        }
+    }
+
+
+
+    .formBlock--continue {
+        float: none;
+        width: 100%;
+        margin: 4px 0 15px;
+    }
+
+    .formBlock--reset {
+        margin-right: 0;
+    }
+
+
+
+    .formBlockTitle {
+        margin: 18px 0 15px;
+        font-size: 18px;
+    }
+
+    .formBlockTitle--small {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .labelRadio__info,
+    .labelRadio__sum {
+        font-size: 14px;
+    }
+
+    .form__hr {
+        margin: 7px -15px 11px;
+
+        .formBlock + & {
+            margin-top: 15px;
+        }
+
+        .formBlockWrapper + & {
+            margin-top: 0;
+        }
+    }
+
+
+    .fieldContainer--image {
+        height: 110px;
+        padding: 20px 5px 0;
+    }
+
+    .fieldContainer--checkbox {
+        padding-top: 7px;
+    }
+
+    .fieldContainer__checkboxInfo {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .fieldContainer__checkboxIcon {
+        top: 6px;
+    }
+
+
+
+    .fieldContainer__label--image {
+        color: $black;
+    }
+
+
+
+    .formBlock__info {
+        padding: 0 0 5px;
+    }
+
+    .formBlock__remark {
+        display: none;
+    }
+}
