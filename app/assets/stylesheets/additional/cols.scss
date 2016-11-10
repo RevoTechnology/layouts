@@ -1,0 +1,53 @@
+.cols {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.cols:before,
+.cols:after {
+   content: "";
+   display: table;
+}
+
+.cols:after {
+   clear: both;
+}
+
+.col_2 {
+    width: 50%;
+    float: left;
+}
+
+.col_3 {
+    padding: 0 20px;
+    width: 33.33%;
+    float: left;
+}
+
+.col_4 {
+    padding-right: 20px;
+    width: 25%;
+    float: left;
+}
+
+.col_4_2 {
+    padding-right: 20px;
+    width: 50%;
+    float: left;
+}
+
+@media (max-width: 767px) {
+    .col_3 {
+        width: 100%;
+        float: none;
+        clear: both;
+    }
+    
+    .col_4 {
+        width: 100%;
+        float: none;
+        clear: both;
+        padding: 0 20px;
+    }
+}
+
