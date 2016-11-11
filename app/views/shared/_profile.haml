@@ -1,17 +1,5 @@
 %section.popup.profile
-    %p.popup__title.popupTitle
-        = 'Анкета клиента'
-        %span.popupTitle__close.popup-close-new
-
-    .popup__popupSecure.popupSecure.for-desctop
-        .popupSecure__info
-            = 'Передача данных осуществляется по защищенному каналу.'
-            =  'Персональные данные обрабатываются в соответствии с'
-            =  'российским законодательством.'
-
     %form.popup_form.form.form--full{:action => '', :method => 'post'}
-        %p.form__title.formBlockTitle
-            = 'Личные данные'
         .form__block.formBlock
             %label.formBlock__fieldContainer.fieldContainer
                 .fieldContainer__label Фамилия
@@ -52,9 +40,6 @@
                 %p.formBlock__errorMessage
                     = 'Поле заполнено неверно.'
 
-        .form__hr
-        %p.form__title.formBlockTitle
-            = 'Паспортные данные'
         .form__formBlockWrapper.formBlockWrapper.clearfix
             .formBlockWrapper__formBlock.formBlock.formBlock--2
                 %label.formBlock__fieldContainer.fieldContainer
@@ -78,25 +63,6 @@
             %p.formBlock__errorMessage
                 = 'Поле заполнено неверно.'
 
-        .form__hr
-        %p.form__title.formBlockTitle
-            = 'Фактический адрес проживания'
-        .formBlockWrapper__formBlock.formBlock.for-mobile
-            %p.formBlock__info
-                = 'Мы автоматически найдем ваш регион'
-                =  'и город по введенному индексу. Это необязательно.'
-        .form__formBlockWrapper.formBlockWrapper.clearfix
-            .formBlockWrapper__formBlock.formBlock.formBlock--3
-                %label.formBlock__fieldContainer.fieldContainer
-                    .fieldContainer__label Ваш индекс
-                    %input.fieldContainer__field{:name => '', :type => 'text'}
-                %span.formBlock__reset.field-reset
-                %p.formBlock__errorMessage
-                    = 'Поле заполнено неверно.'
-            .formBlockWrapper__formBlock.formBlock.formBlock--3_2.for-desctop
-                %p.formBlock__info
-                    = 'Мы автоматически найдем ваш регион'
-                    =  'и город по введенному индексу. Это необязательно.'
         .form__block.formBlock
             %label.formBlock__fieldContainer.fieldContainer
                 .fieldContainer__label Область или регион
@@ -145,9 +111,6 @@
                 %p.formBlock__errorMessage
                     = 'Поле заполнено неверно.'
 
-        .form__hr
-        %p.form__title.formBlockTitle
-            = 'Контактные данные'
         .form__block.formBlock
             %label.formBlock__fieldContainer.fieldContainer
                 .fieldContainer__label Ваш e-mail
@@ -164,19 +127,12 @@
             %p.formBlock__errorMessage
                 = 'Поле заполнено неверно.'
 
-        .form__hr
-        .form__block.formBlock
-            %label.formBlock__fieldContainer.fieldContainer.fieldContainer--checkbox
-                %input.fieldContainer__field{:name => '', :type => 'checkbox'}
-                %span.fieldContainer__checkboxIcon
-                %p.fieldContainer__checkboxInfo
-                    = 'Я соглашаюсь с'
-                    %a{:href => '#'}
-                        = 'Правилами предоставления микрозаймов'
-                    = ', ознакомлен с'
-                    %a{:href => '#'}
-                        = 'информацией об условиях предоставления,'
-                        =  'использования и возврата потребительского займа.'
+        .popup__popupSecure.popupSecure.for-desctop
+            .popupSecure__info
+                = 'Передача данных осуществляется по защищенному каналу.'
+                =  'Персональные данные обрабатываются в соответствии с'
+                =  'российским законодательством.'
+
         .form__block.formBlock.formBlock--margin
             %label.formBlock__fieldContainer.fieldContainer.fieldContainer--checkbox
                 %input.fieldContainer__field{:name => '', :type => 'checkbox'}
