@@ -1,0 +1,13 @@
+.popup.serverError
+    %p.popup__title.popupTitle
+        = "Ошибка"
+    .popup__popupInfo.popupInfo
+        .popupInfo__iconWrapper.popupIconWrapper
+            %span.popupIconWrapper__icon.popupIconWrapper__icon--serverError
+        .popupInfo__title
+            = "Нет связи с сервером"
+        .popupInfo__text
+            = "Возможно, отсуствует подключение к интернету, попробуйте еще раз."
+    .popup__footer.popupFooter
+        %span.linkButton.linkButton--blue.linkButton--sms
+            = 'Попробовать еще раз'

@@ -1,0 +1,16 @@
+.popup.paymentRefuse
+    %p.popup__title.popupTitle
+        = "Извините"
+        %span.popupTitle__close.popup-close
+    .popup__popupInfo.popupInfo
+        .popupInfo__iconWrapper.popupIconWrapper
+            %span.popupIconWrapper__icon.popupIconWrapper__icon--paymentRefuse
+        .popupInfo__title
+            = "Уважаемый клиент!"
+        .popupInfo__text
+            = "Оплата частями не может быть оформлена."
+            %br
+            = "Пожалуйста, выберите другой способ оплаты."
+    .popup__footer.popupFooter
+        %span.linkButton.linkButton--blue.popup-close
+            = "Вернуться в магазин"

@@ -1,0 +1,19 @@
+.popup.paymentLimit
+    %p.popup__title.popupTitle
+        = "Превышение лимита"
+        %span.popupTitle__close.popup-close
+    .popup__popupInfo.popupInfo
+        .popupInfo__iconWrapper.popupIconWrapper
+            %span.popupIconWrapper__icon.popupIconWrapper__icon--paymentLimit
+        .popupInfo__title
+            = "Уважаемый клиент!"
+        .popupInfo__text><
+            = "Сумма вашей покупки превышает Ваш лимит на"
+            %b<
+                = "10000"
+                &#8381;
+            %span><
+                = ". Пожалуйста измените сумму покупки!"
+    .popup__footer.popupFooter
+        %span.linkButton.linkButton--blue.popup-close
+            = "Вернуться в магазин"

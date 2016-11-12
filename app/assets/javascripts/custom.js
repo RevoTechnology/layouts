@@ -4,8 +4,13 @@ $(document).ready(function() {
     var $window = $(window),
         $body = $('body');
 
-    $('.link-register-step2').on('click', function() {
-        $('.popup.profile').bPopup({
+
+
+    $('.link-payment').on('click', function() {
+        var target = $(this).attr('data'),
+            target = '.' + target;
+
+        $(target).bPopup({
             closeClass: 'popup-close',
             opacity: 0.8,
             follow: false
@@ -13,14 +18,6 @@ $(document).ready(function() {
         });
     });
 
-    $('.link-register-step3').on('click', function() {
-        $('.popup.profilePhoto').bPopup({
-            closeClass: 'popup-close',
-            opacity: 0.8,
-            follow: false
-            // , scrollBar: false
-        });
-    });
 
 
     /****************************** FORM ******************************/

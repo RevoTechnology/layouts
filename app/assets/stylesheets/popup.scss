@@ -12,11 +12,13 @@
 
 .popupTitle {
     position: relative;
-    padding: 20px 25px 20px;
+    padding: 19px 25px 19px;
     font-family: $bitter-regular;
     font-size: 20px;
     border-bottom: 1px solid #EAEAEA;
 }
+
+
 
 .popupTitle__close {
     display: inline-block;
@@ -24,7 +26,7 @@
     width: 40px;
     height: 40px;
     margin-top: 0;
-    top: 15px;
+    top: 14px;
     right: 12px;
     background: #fff;
     cursor: pointer;
@@ -247,12 +249,12 @@
 
 /********** info popups **********/
 .popupInfo {
-    padding: 0 20px 28px;
+    padding: 0 20px 21px;
     text-align: center;
 }
 
 .popupIconWrapper {
-    padding: 38px 20px 11px;
+    padding: 38px 20px 13px;
 }
 
 .popupIconWrapper__icon {
@@ -268,26 +270,28 @@
 }
 
 .popupIconWrapper__icon--paymentOk {
-    @include background-image(ok_popup, 80px, 80px);
+    @include background-image(payment_success, 80px, 80px);
 }
 
 .popupIconWrapper__icon--paymentRefuse {
-    @include background-image(popup_refuse, 80px, 80px);
+    @include background-image(payment_refuse, 80px, 80px);
 }
 
-.popupIconWrapper__icon--paymentRenewal {
-    @include background-image(popup_renewal, 80px, 80px);
+.popupIconWrapper__icon--paymentLimit {
+    @include background-image(payment_renewal, 80px, 80px);
 }
 
 
 
 .popupInfo__title {
-    margin-bottom: 10px;
+    max-width: 360px;
+    margin: 0 auto 14px;
     font-size: 20px;
+    line-height: 24px;
 }
 
 .popupInfo__text {
-    margin: 0 auto;
+    margin: 0 auto 2px;
     max-width: 380px;
     color: $gray-deep;
 

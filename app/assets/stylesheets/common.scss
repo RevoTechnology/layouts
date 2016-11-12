@@ -74,7 +74,7 @@ a {
         content: '';
         position: relative;
         top: 5px;
-        margin-right: 15px;
+        margin-right: 10px;
         @include background-image(arrow_round_white, 17px, 19px);
         @include transition(none);
     }
