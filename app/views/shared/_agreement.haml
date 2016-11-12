@@ -1,0 +1,84 @@
+.popup.agreement
+    .popup__steps.popupSteps
+        .popupSteps__step.popupStep.popupStep--made
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 1
+            %span.popupStep__info
+                = "Введите"
+                %br
+                = "номер телефона"
+        .popupSteps__step.popupStep.popupStep--made
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 2
+            %span.popupStep__info
+                = "Заполните"
+                %br
+                = "анкету"
+        .popupSteps__step.popupStep.popupStep--made
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 3
+            %span.popupStep__info
+                = "Загрузите фото"
+                %br
+                = "паспорта"
+        .popupSteps__step.popupStep.popupStep--current
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 4
+            %span.popupStep__info
+                = "Оформите"
+                %br
+                = "услугу"
+
+    .popup__attention.popupAttention
+        %span.popupAttention__info Осталось менее 30 секунд
+
+    .popup__agreement.popupAgreement
+        %a.popupAgreement__download{:href => ""}
+            = "Читать полностью"
+
+    %form.popup__form.form{:action => "", :method => ""}
+        .form__hr
+        .form__block.formBlock
+            %label.formBlock__fieldContainer.fieldContainer.fieldContainer--checkbox
+                %input.fieldContainer__field{:name => "", :type => "checkbox"}
+                %span.fieldContainer__checkboxIcon
+                %p.fieldContainer__checkboxInfo
+                    = "Я согласен с общими и индивидуальными условиями договора потребительского займа"
+        .form__block.formBlock.formBlock--margin
+            %label.formBlock__fieldContainer.fieldContainer.fieldContainer--checkbox
+                %input.fieldContainer__field{:name => "", :type => "checkbox"}
+                %span.fieldContainer__checkboxIcon
+                %p.fieldContainer__checkboxInfo
+                    = "Я хочу подключить услугу СМС-информирование за 49 рублей в месяц ("
+                    %a{:href => ""}
+                        = "условия оказания услуги"
+                    = ")"
+
+        %p.form__title.formBlockTitle.formBlockTitle--small
+            = "Для подписания оферты введите код, полученный в СМС-сообщении"
+        .form__formBlockWrapper.formBlockWrapper.clearfix
+            .formBlockWrapper__formBlock.formBlock.formBlock--2
+                %label.formBlock__fieldContainer.fieldContainer
+                    .fieldContainer__label
+                        = "СМС-код"
+                    %input.fieldContainer__field{:name => "", :type => "text"}
+                %span.formBlock__reset.field-reset
+                %p.formBlock__errorMessage
+                    = "Поле заполнено неверно."
+            .formBlockWrapper__formBlock.formBlock.formBlock--2
+                %span.linkButton.linkButton--blue.linkButton--sms.send-sms
+                    = "Выслать еще раз"
+            .formBlockWrapper__sendHidden.formSendHidden
+                .formsendHidden__info.formSendHiddenInfo
+                    = "Повторная отправка возможна через&nbsp;"
+                    %span.formSendHiddenInfo__time 90
+                    = "секунд"
+
+        .form__hr
+        .form__formBlockWrapper.formBlockWrapper.clearfix
+            .formBlockWrapper__formBlock.formBlock.formBlock--continue
+                %span.linkButton.linkButton--orange
+                    = "Завершить"
+            .formBlockWrapper__formBlock.formBlock.formBlock--reset
+                %span.linkButton.linkButton--white
+                    = "Назад"

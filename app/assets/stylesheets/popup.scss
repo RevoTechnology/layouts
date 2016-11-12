@@ -309,81 +309,6 @@
 
 
 
-// attention block
-.agreementAttention {
-    position: relative;
-    margin: 30px 0 13px;
-    padding: 33px 20px 31px;
-    text-align: center;
-    border: 3px solid $orange;
-}
-
-.agreementAttention__title {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    display: inline-block;
-    padding: 0 30px;
-    background-color: $white;
-    font: 14px/20px $nova-bold;
-    @include transform(translateX(-50%));
-    white-space: nowrap;
-}
-
-.agreementAttention__info {
-    font-size: 20px;
-}
-
-
-
-// conditions block
-.popupConditionsWrapper {
-
-}
-
-.popupConditionsList {
-    margin: 0 0 10px;
-    counter-reset: item;
-}
-
-.popupConditionsListItem {
-    position: relative;
-    padding: 20px 0 20px 35px;
-    border-bottom: 1px solid #D1D1D1;
-
-    &:last-child {
-        border: 0;
-    }
-
-    &:before {
-        display: inline-block;
-        position: absolute;
-        top: 20px;
-        left: 0;
-        content:counters(item,".");
-        counter-increment:item;
-        font-size: 14px;
-        color: #9F9F9F;
-    }
-}
-
-.popupConditionsListItem__title {
-    float: left;
-    width: 50%;
-    padding-right: 20px;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-.popupConditionsListItem__info {
-    float: left;
-    padding-left: 10px;
-    width: 50%;
-    font: 14px/20px $nova-bold;
-}
-
-
-
 // download link button
 .popupAgreement__download {
     display: block;
@@ -405,7 +330,7 @@
         content: '';
         position: relative;
         top: 7px;
-        margin-right: 15px;
+        margin-right: 8px;
         @include background-image(link_pdf, 24px, 25px);
     }
 }
@@ -474,18 +399,6 @@
     /********** agreement popup **********/
     .popupAgreement {
         padding: 0 15px 10px;
-    }
-
-    .agreementAttention {
-        padding: 26px 20px 24px;
-    }
-
-    .agreementAttention__title {
-        padding: 0 15px;
-    }
-
-    .agreementAttention__info {
-        line-height: 24px;
     }
 
 
