@@ -214,12 +214,11 @@
 }
 
 .popupFooter--special {
-    padding-top: 23px;
-    padding-bottom: 27px;
+    padding-top: 4px;
+    padding-bottom: 24px;
 
     &:before {
-        left: 25px;
-        right: 25px;
+        background: transparent;
     }
 }
 
@@ -233,7 +232,7 @@
 .popupFooter__logo {
     float: left;
     margin-top: 2px;
-    margin-left: 30px;
+    margin-left: 2px;
     @include background-image(logo_header, 101px, 18px);
 }
 

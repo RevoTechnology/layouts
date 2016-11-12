@@ -1,8 +1,8 @@
 %section{:style=> "padding: 20px;"}
-    -# %span{:class => "link-register", :style => "cursor: pointer;"}= 'зарегистрироваться - 1 шаг'
+    %span{:class => "link-payment", :data => "processing", :style => "cursor: pointer; margin-right: 30px;"}= '1 шаг'
     %span{:class => "link-payment", :data => "profile", :style => "cursor: pointer; margin-right: 30px;"}= '2 шаг'
     %span{:class => "link-payment", :data => "profilePhoto", :style => "cursor: pointer; margin-right: 30px;"}= '3 шаг'
-    -# %span{:class => "link-register-step4", :style => "cursor: pointer;"}= '4 шаг'
+    -# %span{:class => "link-payment", :data => "", :style => "cursor: pointer;"}= '4 шаг'
 
     %hr{:style => "border: 1px solid black; margin: 20px 0;"}
 
@@ -10,8 +10,9 @@
     %span{:class => "link-payment", :data => "paymentRefuse", :style => "cursor: pointer; margin-right: 30px;"}= 'извините'
     %span{:class => "link-payment", :data => "paymentLimit", :style => "cursor: pointer; margin-right: 30px;"}= 'лимит'
     %span{:class => "link-payment", :data => "loading", :style => "cursor: pointer; margin-right: 30px;"}= 'loading'
-    %span{:class => "link-payment", :data => "serverError", :style => "cursor: pointer; margin-right: 30px;"}= 'error'
+    %span{:class => "link-payment", :data => "serverError", :style => "cursor: pointer;"}= 'error'
 
+= render 'shared/profile_phone'
 = render 'shared/profile'
 = render 'shared/profile_photo'
 

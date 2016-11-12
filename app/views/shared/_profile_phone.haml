@@ -1,0 +1,24 @@
+.popup.processing
+    %form.popup__form.form{:action => "", :method => "post"}
+        %p.form__title.formBlockTitle.formBlockTitle--topMargin
+            = "Введите Ваш номер мобильного телефона"
+        .form__block.formBlock
+            %label.formBlock__fieldContainer.fieldContainer
+                .fieldContainer__label Ваш телефон
+                %input.fieldContainer__field.field-mobile{:name => "", :type => "text"}
+            %span.formBlock__reset.field-reset
+            %p.formBlock__errorMessage
+                = "Поле заполнено неверно."
+        .form__hr
+        .form__formBlockWrapper.formBlockWrapper.clearfix
+            .formBlockWrapper__formBlock.formBlock.formBlock--continue
+                %span.linkButton.linkButton--orange
+                    = "Продолжить"
+            .formBlockWrapper__formBlock.formBlock.formBlock--reset
+                %span.linkButton.linkButton--white.popup-close
+                    = "Отменить"
+
+    .popup__footer.popupFooter.popupFooter--special.clearfix
+        %span.popupFooter__logo
+        .popupFooter__info
+            = "Сервис предоставлен МФО «Рево Технологии»"
