@@ -164,6 +164,21 @@
 
 
 
+@media (max-width: 767px) {
+    .popupAttention {
+        margin: 10px 15px 18px;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    .popupAttention__info {
+        padding: 0;
+    }
+}
+
+
 
 // secure block
 .popupSecure {
@@ -239,9 +254,16 @@
 
 
 /********** popups with form **********/
-.popup__form,
-.popup_form {
+.popup__form {
     padding: 0 25px;
+}
+
+
+
+@media (max-width: 767px) {
+    .popup__form {
+        padding: 0 15px;
+    }
 }
 
 
@@ -341,8 +363,8 @@
     .popup {
         width: auto;
         min-width: 290px;
-        left: 15px;
-        right: 15px;
+        left: 15px!important;
+        right: 15px!important;
     }
 
     .popupTitle {
@@ -370,7 +392,7 @@
     }
 
     .popupFooter--special {
-        padding: 22px 15px 21px;
+        padding: 15px 15px 25px;
     }
 
     .popupFooter--special {
@@ -398,7 +420,7 @@
 
     /********** agreement popup **********/
     .popupAgreement {
-        padding: 0 15px 10px;
+        padding: 0 0 10px;
     }
 
 

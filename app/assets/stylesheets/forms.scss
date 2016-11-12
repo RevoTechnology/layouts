@@ -384,6 +384,10 @@
     color: $black;
 }
 
+.selectize-input input {
+    width: 100%!important;
+}
+
 .selectize-control {
     line-height: 0;
 }
@@ -671,7 +675,7 @@
     }
 
     .formBlock--margin {
-        margin-bottom: 35px;
+        margin-bottom: 21px;
     }
 
     .formBlock--2,
@@ -708,8 +712,7 @@
 
 
     .formBlockTitle {
-        margin: 18px 0 15px;
-        font-size: 18px;
+        margin: 18px 0 19px;
     }
 
     .formBlockTitle--small {
@@ -735,8 +738,10 @@
 
 
     .fieldContainer--image {
-        height: 110px;
-        padding: 20px 5px 0;
+        max-height: 120px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 20px 5px 19px;
     }
 
     .fieldContainer--checkbox {
@@ -766,5 +771,17 @@
 
     .formBlock__remark {
         display: none;
+    }
+
+
+
+    // sms block
+    .formBlockWrapper--sms {
+        margin-bottom: 0;
+    }
+
+    .formSendHidden {
+        padding-top: 0;
+        padding-bottom: 16px;
     }
 }
