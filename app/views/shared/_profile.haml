@@ -1,4 +1,37 @@
 %section.popup.profile
+    .popup__steps.popupSteps
+        .popupSteps__step.popupStep.popupStep--made
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 1
+            %span.popupStep__info
+                = "Введите"
+                %br
+                = "номер телефона"
+        .popupSteps__step.popupStep.popupStep--current
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 2
+            %span.popupStep__info
+                = "Заполните"
+                %br
+                = "анкету"
+        .popupSteps__step.popupStep
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 3
+            %span.popupStep__info
+                = "Загрузите фото"
+                %br
+                = "паспорта"
+        .popupSteps__step.popupStep
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 4
+            %span.popupStep__info
+                = "Оформите"
+                %br
+                = "услугу"
+
+    .popup__attention.popupAttention
+        %span.popupAttention__info Оформление займет всего 2 минуты!
+
     %form.popup_form.form.form--full{:action => '', :method => 'post'}
         .form__block.formBlock
             %label.formBlock__fieldContainer.fieldContainer
@@ -50,14 +83,14 @@
                     = 'Поле заполнено неверно.'
             .formBlockWrapper__formBlock.formBlock.formBlock--2
                 %label.formBlock__fieldContainer.fieldContainer
-                    .fieldContainer__label Дата выдачи
+                    .fieldContainer__label Дата выдачи паспорта
                     %input.fieldContainer__field.field-date{:name => '', :type => 'text'}
                 %span.formBlock__reset.field-reset
                 %p.formBlock__errorMessage
                     = 'Поле заполнено неверно.'
         .form__block.formBlock
             %label.formBlock__fieldContainer.fieldContainer
-                .fieldContainer__label Кем выдан
+                .fieldContainer__label Кем выдан паспорт
                 %input.fieldContainer__field{:name => '', :type => 'text'}
             %span.formBlock__reset.field-reset
             %p.formBlock__errorMessage
@@ -65,13 +98,13 @@
 
         .form__block.formBlock
             %label.formBlock__fieldContainer.fieldContainer
-                .fieldContainer__label Область или регион
+                .fieldContainer__label Ваша область или регион
                 %input.fieldContainer__field{:name => '', :type => 'text'}
             %span.formBlock__reset.field-reset
             %p.formBlock__errorMessage
                 = 'Поле заполнено неверно.'
         .form__block.formBlock
-            %select.field_select{:placeholder => 'Город или населенный пункт'}
+            %select.field_select{:placeholder => 'Ваш город или населенный пункт'}
                 %option{:value => ''} Выберите город
                 %option{:value => '1'} Москва
                 %option{:value => '2'} Челябинск
@@ -83,7 +116,7 @@
                 = 'Поле заполнено неверно.'
         .form__block.formBlock
             %label.formBlock__fieldContainer.fieldContainer
-                .fieldContainer__label Улица или переулок
+                .fieldContainer__label Ваша улица или переулок
                 %input.fieldContainer__field{:name => '', :type => 'text'}
             %span.formBlock__reset.field-reset
             %p.formBlock__errorMessage
@@ -147,7 +180,7 @@
 
         %p.form__title.formBlockTitle.for-desctop
             = 'Введите код, полученный в СМС-сообщении'
-        .form__formBlockWrapper.formBlockWrapper.clearfix
+        .form__formBlockWrapper.formBlockWrapper.formBlockWrapper--sms.clearfix
             .formBlockWrapper__formBlock.formBlock.formBlock--2
                 %label.formBlock__fieldContainer.fieldContainer
                     .fieldContainer__label СМС-код

@@ -83,6 +83,13 @@ $(document).ready(function() {
     $(".field-date").inputmask("dd/mm/yyyy",{ "placeholder": "дд/мм/гггг" });
     $(".field-mobile").inputmask('+7(999)-999-99-99');
 
+    /***** input select *****/
+    $('.field_select').selectize({
+        sortField: {
+            field: 'text',
+            direction: 'asc'
+        }
+    });
 
 
     /***** send sms *****/
