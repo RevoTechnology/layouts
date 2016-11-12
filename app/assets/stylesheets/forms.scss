@@ -174,7 +174,7 @@
 }
 
 .fieldContainer--period {
-    margin: 0 0 10px;
+    margin: 0 0 3px;
     padding: 0;
     height: auto;
     border: 0;
@@ -521,76 +521,18 @@
 
 .labelRadio {
     position: relative;
-    display: none;
-    padding: 13px 15px 13px;
-    background: #2A83A5;
-    @include transition(background-color $transition-normal);
-
-    &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 15px;
-        right: 15px;
-        display: inline-block;
-        height: 1px;
-        background-color: rgba(255,255,255, 0.3)
-    }
-
-    &:last-child {
-        // padding-top: 14px;
-
-        &:after {
-            display: none;
-        }
-    }
-}
-
-.labelRadio--header {
     display: block;
+    padding: 13px 15px 13px;
     background-color: $white;
+    @include transition(background-color $transition-normal);
 
     &:hover {
         background-color: $white-light;
     }
 
-    &:after {
-        display: none;
-    }
-
-    .labelRadio__info,
-    .labelRadio__sum {
-        color: $black;
-    }
-
-    .labelRadio__info {
-        position: relative;
-        padding-left: 30px;
-
+    &:last-child {
         &:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -2px;
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            margin-top: -9px;
-            @include bradius(50%);
-            background-color: $gray-clear;
-            @include transition(background-color $transition-normal);
-        }
-
-        &:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 2px;
-            margin-top: -4px;
-            @include opacity(0);
-            @include background-image(mark_blue, 11px, 8px);
-            @include transition(opacity $transition-normal);
-            z-index: 2;
+            display: none;
         }
     }
 
@@ -601,8 +543,7 @@
             background-color: $blue;
         }
 
-        .labelRadio__info,
-        .labelRadio__sum {
+        .labelRadio__info {
             color: $white;
         }
 
@@ -619,23 +560,71 @@
 }
 
 .labelRadio__info {
+    position: relative;
+    padding-left: 30px;
     float: left;
     display: inline-block;
     font-size: 16px;
-    color: $white;
+    color: $black;
     @include transition(color $transition-normal);
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -2px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-top: -9px;
+        @include bradius(50%);
+        background-color: $gray-clear;
+        @include transition(background-color $transition-normal);
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        margin-top: -4px;
+        @include opacity(0);
+        @include background-image(mark_blue, 11px, 8px);
+        @include transition(opacity $transition-normal);
+        z-index: 2;
+    }
 }
 
-.labelRadio__sum {
-    float: right;
-    display: inline-block;
-    font-size: 16px;
-    color: $white;
-    @include transition(color $transition-normal);
 
-    b {
-        font-family: $nova-bold;
+
+// payment schedule
+.paymentScheduleWrapper {
+
+}
+
+.paymentSchedule {
+    padding: 13px 0 12px;
+    border-bottom: 1px solid #DEDEDE;
+
+    &:last-child {
+        border: 0;
     }
+}
+
+.paymentSchedule__info {
+    padding-left: 0;
+    color: #959595;
+}
+
+.paymentSchedule__date {
+    padding: 0;
+    text-align: center;
+}
+
+.paymentSchedule__sum {
+    padding-right: 0;
+    text-align: right;
+    font-family: $nova-bold;
 }
 
 
@@ -720,8 +709,7 @@
         line-height: 20px;
     }
 
-    .labelRadio__info,
-    .labelRadio__sum {
+    .labelRadio__info {
         font-size: 14px;
     }
 

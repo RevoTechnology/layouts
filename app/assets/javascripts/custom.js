@@ -44,16 +44,16 @@ $(document).ready(function() {
 
     /***** input radio period *****/
     $('.fieldContainer__fieldPeriod').on('change', function() {
-        var $formBlock = $(this).closest('.formBlock'),
-            $fieldContainers = $formBlock.find('.fieldContainer'),
-            $fieldContainerCurrent = $(this).closest('.fieldContainer'),
-            $labels = $fieldContainers.find('.labelRadio').not('.labelRadio--header'),
-            $labelCurrent = $fieldContainerCurrent.find('.labelRadio').not('.labelRadio--header');
-
-        $labels.slideUp(300);
-        $labelCurrent.slideDown(300);
-        $fieldContainers.removeClass('is-checked');
-        $fieldContainerCurrent.addClass('is-checked');
+        // var $formBlock = $(this).closest('.formBlock'),
+        //     $fieldContainers = $formBlock.find('.fieldContainer'),
+        //     $fieldContainerCurrent = $(this).closest('.fieldContainer'),
+        //     $labels = $fieldContainers.find('.labelRadio').not('.labelRadio--header'),
+        //     $labelCurrent = $fieldContainerCurrent.find('.labelRadio').not('.labelRadio--header');
+        //
+        // $labels.slideUp(300);
+        // $labelCurrent.slideDown(300);
+        // $fieldContainers.removeClass('is-checked');
+        // $fieldContainerCurrent.addClass('is-checked');
     });
 
     /***** input image load *****/

@@ -32,11 +32,58 @@
     .popup__attention.popupAttention
         %span.popupAttention__info Осталось менее 30 секунд
 
-    .popup__agreement.popupAgreement
-        %a.popupAgreement__download{:href => ""}
-            = "Читать полностью"
-
     %form.popup__form.form{:action => "", :method => ""}
+        %p.form__title.formBlockTitle
+            = "Срок оплаты"
+        .form__formBlockWrapper.formBlockWrapper.clearfix
+            .formBlockWrapper__formBlock.formBlock.formBlock--2
+                %label.formBlock__fieldContainer.fieldContainer.fieldContainer--period
+                    %input.fieldContainer__fieldPeriod{:name => "period", :type => "radio", :checked => "checked"}
+                    .fieldContainer__labelWrapper.labelRadioWrapper
+                        .labelRadioWrapper__labelRadio.labelRadio.clearfix
+                            .labelRadio__info
+                                = "3 месяца"
+            .formBlockWrapper__formBlock.formBlock.formBlock--2
+                %label.formBlock__fieldContainer.fieldContainer.fieldContainer--period
+                    %input.fieldContainer__fieldPeriod{:name => "period", :type => "radio"}
+                    .fieldContainer__labelWrapper.labelRadioWrapper
+                        .labelRadioWrapper__labelRadio.labelRadio.clearfix
+                            .labelRadio__info
+                                = "6 месяцев"
+
+        .form__hr
+        %p.form__title.formBlockTitle
+            = "Ваш график платежей"
+        .form__paymentSchedule.paymentScheduleWrapper
+            .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                .col_3.paymentSchedule__info
+                    = "Первый платеж"
+                .col_3.paymentSchedule__date
+                    = "28 сентября 2016"
+                .col_3.paymentSchedule__sum
+                    = "6400"
+                    &#8381;
+            .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                .col_3.paymentSchedule__info
+                    = "Первый платеж"
+                .col_3.paymentSchedule__date
+                    = "28 сентября 2016"
+                .col_3.paymentSchedule__sum
+                    = "6400"
+                    &#8381;
+            .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                .col_3.paymentSchedule__info
+                    = "Первый платеж"
+                .col_3.paymentSchedule__date
+                    = "28 сентября 2016"
+                .col_3.paymentSchedule__sum
+                    = "6400"
+                    &#8381;
+
+        .form__agreement.popupAgreement
+            %a.popupAgreement__download{:href => ""}
+                = "Читать полностью"
+
         .form__hr
         .form__block.formBlock
             %label.formBlock__fieldContainer.fieldContainer.fieldContainer--checkbox
@@ -70,7 +117,7 @@
                     = "Выслать еще раз"
             .formBlockWrapper__sendHidden.formSendHidden
                 .formsendHidden__info.formSendHiddenInfo
-                    = "Повторная отправка возможна через&nbsp;"
+                    = "Повторная отправка возможна через"
                     %span.formSendHiddenInfo__time 90
                     = "секунд"
 
