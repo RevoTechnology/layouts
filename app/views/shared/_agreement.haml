@@ -37,8 +37,8 @@
             = "Срок оплаты"
         .form__formBlockWrapper.formBlockWrapper.clearfix
             .formBlockWrapper__formBlock.formBlock.formBlock--2
-                %label.formBlock__fieldContainer.fieldContainer.fieldContainer--period
-                    %input.fieldContainer__fieldPeriod{:name => "period", :type => "radio", :checked => "checked"}
+                %label.formBlock__fieldContainer.fieldContainer.fieldContainer--period.is-checked
+                    %input.fieldContainer__fieldPeriod{:name => "period", :type => "radio"}
                     .fieldContainer__labelWrapper.labelRadioWrapper
                         .labelRadioWrapper__labelRadio.labelRadio.clearfix
                             .labelRadio__info
@@ -54,31 +54,81 @@
         .form__hr
         %p.form__title.formBlockTitle
             = "Ваш график платежей"
-        .form__paymentSchedule.paymentScheduleWrapper
-            .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
-                .col_3.paymentSchedule__info
-                    = "Первый платеж"
-                .col_3.paymentSchedule__date
-                    = "28 сентября 2016"
-                .col_3.paymentSchedule__sum
-                    = "6400"
-                    &#8381;
-            .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
-                .col_3.paymentSchedule__info
-                    = "Первый платеж"
-                .col_3.paymentSchedule__date
-                    = "28 сентября 2016"
-                .col_3.paymentSchedule__sum
-                    = "6400"
-                    &#8381;
-            .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
-                .col_3.paymentSchedule__info
-                    = "Первый платеж"
-                .col_3.paymentSchedule__date
-                    = "28 сентября 2016"
-                .col_3.paymentSchedule__sum
-                    = "6400"
-                    &#8381;
+        .form__scheduleWrapper.scheduleWrapper
+            .scheduleWrapper__paymentScheduleWrapper.paymentScheduleWrapper
+                .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                    .col_3.paymentSchedule__info
+                        = "Первый платеж"
+                    .col_3.paymentSchedule__date
+                        = "28 сентября 2016"
+                    .col_3.paymentSchedule__sum
+                        = "6400"
+                        &#8381;
+                .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                    .col_3.paymentSchedule__info
+                        = "Первый платеж"
+                    .col_3.paymentSchedule__date
+                        = "28 сентября 2016"
+                    .col_3.paymentSchedule__sum
+                        = "6400"
+                        &#8381;
+                .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                    .col_3.paymentSchedule__info
+                        = "Первый платеж"
+                    .col_3.paymentSchedule__date
+                        = "28 сентября 2016"
+                    .col_3.paymentSchedule__sum
+                        = "6400"
+                        &#8381;
+            .scheduleWrapper__paymentScheduleWrapper.paymentScheduleWrapper
+                .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                    .col_3.paymentSchedule__info
+                        = "Первый платеж"
+                    .col_3.paymentSchedule__date
+                        = "28 сентября 2016"
+                    .col_3.paymentSchedule__sum
+                        = "6400"
+                        &#8381;
+                .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                    .col_3.paymentSchedule__info
+                        = "Первый платеж"
+                    .col_3.paymentSchedule__date
+                        = "28 сентября 2016"
+                    .col_3.paymentSchedule__sum
+                        = "6400"
+                        &#8381;
+                .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                    .col_3.paymentSchedule__info
+                        = "Первый платеж"
+                    .col_3.paymentSchedule__date
+                        = "28 сентября 2016"
+                    .col_3.paymentSchedule__sum
+                        = "6400"
+                        &#8381;
+                .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                    .col_3.paymentSchedule__info
+                        = "Первый платеж"
+                    .col_3.paymentSchedule__date
+                        = "28 сентября 2016"
+                    .col_3.paymentSchedule__sum
+                        = "6400"
+                        &#8381;
+                .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                    .col_3.paymentSchedule__info
+                        = "Первый платеж"
+                    .col_3.paymentSchedule__date
+                        = "28 сентября 2016"
+                    .col_3.paymentSchedule__sum
+                        = "6400"
+                        &#8381;
+                .paymentScheduleWrapper__paymentSchedule.paymentSchedule.cols
+                    .col_3.paymentSchedule__info
+                        = "Первый платеж"
+                    .col_3.paymentSchedule__date
+                        = "28 сентября 2016"
+                    .col_3.paymentSchedule__sum
+                        = "6400"
+                        &#8381;
 
         .form__agreement.popupAgreement
             %a.popupAgreement__download{:href => ""}

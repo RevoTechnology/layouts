@@ -598,8 +598,16 @@
 
 
 // payment schedule
-.paymentScheduleWrapper {
+.scheduleWrapper {
 
+}
+
+.paymentScheduleWrapper {
+    display: none;
+
+    &:first-child {
+        display: block;
+    }
 }
 
 .paymentSchedule {
