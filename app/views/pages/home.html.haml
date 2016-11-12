@@ -1,4 +1,8 @@
 %section{:style=> "padding: 20px;"}
-    %span{:class => "link-register", :style => "cursor: pointer;"}= 'зарегистрироваться'
+    -# %span{:class => "link-register", :style => "cursor: pointer;"}= 'зарегистрироваться - 1 шаг'
+    %span{:class => "link-register-step2", :style => "cursor: pointer; margin-right: 30px;"}= '2 шаг'
+    %span{:class => "link-register-step3", :style => "cursor: pointer; margin-right: 30px;"}= '3 шаг'
+    -# %span{:class => "link-register", :style => "cursor: pointer;"}= 'зарегистрироваться - 4 шаг'
 
 = render 'shared/profile'
+= render 'shared/profile_photo'

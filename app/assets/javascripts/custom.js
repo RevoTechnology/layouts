@@ -4,8 +4,17 @@ $(document).ready(function() {
     var $window = $(window),
         $body = $('body');
 
-    $('.link-register').on('click', function() {
+    $('.link-register-step2').on('click', function() {
         $('.popup.profile').bPopup({
+            closeClass: 'popup-close',
+            opacity: 0.8,
+            follow: false
+            // , scrollBar: false
+        });
+    });
+
+    $('.link-register-step3').on('click', function() {
+        $('.popup.profilePhoto').bPopup({
             closeClass: 'popup-close',
             opacity: 0.8,
             follow: false

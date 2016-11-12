@@ -3,10 +3,6 @@
 
 }
 
-.form--imageLoad {
-    padding-top: 25px;
-}
-
 .formBlock {
     position: relative;
     max-width: 100%;
@@ -138,6 +134,7 @@
 .fieldContainer--image {
     overflow: hidden;
     height: 150px;
+    margin-bottom: 20px;
     padding: 38px 20px 0;
     text-align: center;
     border: 1px solid #E1E1E1;

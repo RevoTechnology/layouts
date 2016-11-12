@@ -1,0 +1,77 @@
+.popup.profilePhoto
+    .popup__steps.popupSteps
+        .popupSteps__step.popupStep.popupStep--made
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 1
+            %span.popupStep__info
+                = "Введите"
+                %br
+                = "номер телефона"
+        .popupSteps__step.popupStep.popupStep--made
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 2
+            %span.popupStep__info
+                = "Заполните"
+                %br
+                = "анкету"
+        .popupSteps__step.popupStep.popupStep--current
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 3
+            %span.popupStep__info
+                = "Загрузите фото"
+                %br
+                = "паспорта"
+        .popupSteps__step.popupStep
+            %p.popupStep__number.popupStepNumber
+                %span.popupStepNumber__info 4
+            %span.popupStep__info
+                = "Оформите"
+                %br
+                = "услугу"
+
+    .popup__attention.popupAttention
+        %span.popupAttention__info Осталось менее минуты
+
+    %form.popup__form.form{:action => "", :method => "post"}
+        .form__block.formBlock
+            %label.formBlock__fieldContainer.fieldContainer.fieldContainer--image
+                = image_tag "", class: "fieldContainer__imgBg"
+                .fieldContainer__addImage
+                .fieldContainer__label.fieldContainer__label--image
+                    = "Фото разворота паспорта"
+                %input.fieldContainer__field.field-image{:name => '', :type => "file"}
+                .linkButton.linkButton--imageLoad
+                    = "ЗАГРУЗИТЬ ДРУГОЕ"
+            %p.formBlock__errorMessage
+                = "Не загружено фото."
+        .form__block.formBlock
+            %label.formBlock__fieldContainer.fieldContainer.fieldContainer--image
+                = image_tag "", class: "fieldContainer__imgBg"
+                .fieldContainer__addImage
+                .fieldContainer__label.fieldContainer__label--image
+                    = "Фото страницы с регистрацией"
+                %input.fieldContainer__field.field-image{:name => '', :type => "file"}
+                .linkButton.linkButton--imageLoad
+                    = "ЗАГРУЗИТЬ ДРУГОЕ"
+            %p.formBlock__errorMessage
+                = "Не загружено фото."
+        .form__block.formBlock
+            %label.formBlock__fieldContainer.fieldContainer.fieldContainer--image
+                = image_tag "", class: "fieldContainer__imgBg"
+                .fieldContainer__addImage
+                .fieldContainer__label.fieldContainer__label--image
+                    = "Ваше фото на фоне разворота паспорта"
+                %input.fieldContainer__field.field-image{:name => '', :type => "file"}
+                .linkButton.linkButton--imageLoad
+                    = "ЗАГРУЗИТЬ ДРУГОЕ"
+            %p.formBlock__errorMessage
+                = "Не загружено фото."
+
+        .form__hr
+        .form__formBlockWrapper.formBlockWrapper.clearfix
+            .formBlockWrapper__formBlock.formBlock.formBlock--continue
+                %span.linkButton.linkButton--orange
+                    = 'Продолжить'
+            .formBlockWrapper__formBlock.formBlock.formBlock--reset
+                %span.linkButton.linkButton--white.popup-close
+                    = 'Отменить'
