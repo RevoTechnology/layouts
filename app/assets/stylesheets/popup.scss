@@ -390,6 +390,29 @@
 
 
 
+@media (max-width: 767px) {
+    .popupIconWrapper {
+        padding: 29px 20px 15px;
+    }
+
+    .popupInfo__title {
+        margin-bottom: 9px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .popupInfo__text {
+        font-size: 16px;
+        line-height: 20px;
+
+        br {
+            display: none;
+        }
+    }
+}
+
+
+
 /********** agreement popup **********/
 .popupAgreement {
     padding: 15px 0 10px;
@@ -474,8 +497,7 @@
     }
 
     .popupInfo {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 0 15px 21px;
     }
 
     .popupFooter__info {
