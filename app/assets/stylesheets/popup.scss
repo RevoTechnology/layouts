@@ -508,7 +508,12 @@
 
     /********** agreement popup **********/
     .popupAgreement {
-        padding: 0 0 10px;
+        margin-top: 9px;
+        padding: 0 0 8px;
+    }
+
+    .popupAgreement__download {
+        margin-bottom: 0;
     }
 
 
