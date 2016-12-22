@@ -100,10 +100,14 @@
                 = 'Поле заполнено неверно.'
 
         .form__block.formBlock
-            %label.formBlock__fieldContainer.fieldContainer
-                .fieldContainer__label Ваша область или регион
-                %input.fieldContainer__field{:name => '', :type => 'text'}
-            %span.formBlock__reset.field-reset
+            %select.field_select{:placeholder => 'Ваша область или регион'}
+                %option{:value => ''} Выберите область или регион
+                %option{:value => '1'} Московская
+                %option{:value => '2'} Челябинская
+                %option{:value => '3'} Тюменская
+                %option{:value => '4'} Самарская
+                %option{:value => '5'} республика Саха
+            / span.formBlock__reset.field-reset
             %p.formBlock__errorMessage
                 = 'Поле заполнено неверно.'
         .form__block.formBlock
@@ -118,12 +122,17 @@
             %p.formBlock__errorMessage
                 = 'Поле заполнено неверно.'
         .form__block.formBlock
-            %label.formBlock__fieldContainer.fieldContainer
-                .fieldContainer__label Ваша улица или переулок
-                %input.fieldContainer__field{:name => '', :type => 'text'}
-            %span.formBlock__reset.field-reset
+            %select.field_select{:placeholder => 'Ваша улица или переулок'}
+                %option{:value => ''} Выберите улицу или переулок
+                %option{:value => '1'} Ленина
+                %option{:value => '2'} Гарибальди
+                %option{:value => '3'} Цурюпы
+                %option{:value => '4'} Бутлерова
+                %option{:value => '5'} Болотниковская
+            / span.formBlock__reset.field-reset
             %p.formBlock__errorMessage
                 = 'Поле заполнено неверно.'
+
         .form__formBlockWrapper.formBlockWrapper.formBlockWrapper--address.clearfix
             .formBlockWrapper__formBlock.formBlock.formBlock--3
                 %label.formBlock__fieldContainer.fieldContainer
