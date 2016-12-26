@@ -92,13 +92,14 @@ $(document).ready(function() {
     $(".field-mobile").inputmask('+7(999)-999-99-99');
 
     /***** input select *****/
-    $('.field_select').selectize({
-        sortField: {
-            field: 'text',
-            direction: 'asc'
-        }
+    $('.field_select').each(function() {
+        $(this).selectize({
+            sortField: {
+                field: 'text',
+                direction: 'asc'
+            }
+        });
     });
-
 
     /***** send sms *****/
     $('.send-sms').on('click', function(e) {
